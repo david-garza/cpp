@@ -19,9 +19,14 @@ struct Stat_data
 	double min;
 	double mean;
 	double median;
+	Stat_data();
+	Stat_data(double a, double b, double c, double d);
 };
 //--------------------------------------
-
+Stat_data::Stat_data()
+	:max{}, min{}, mean{}, median{} {}
+Stat_data::Stat_data(double a, double b, double c, double d)
+	:max{ a }, min{ b }, mean{ c }, median{d} {}
 
 
 // Find the largest element of a vector
@@ -73,13 +78,14 @@ double median(vector<double> x) {
 
 // Find all 4 statistics of a vector of a vector
 Stat_data summary(vector<double>& x) {
-	Stat_data temp;
-
+	Stat_data temp(maxv(x), minv(x), mean(x), median(x));
+	/*
 	temp.max = maxv(x);
 	temp.min = minv(x);
 	temp.mean = mean(x);
 	temp.median = median(x);
-
+	*/
+	
 	return temp;
 }
 //--------------------------------------
