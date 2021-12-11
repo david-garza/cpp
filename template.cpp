@@ -1,10 +1,18 @@
-// Basic template for the first 8 chapters of the text book
+/* Base template with exception catching */
+#include <iostream>
 
-#include "std_lib_facilities.h"
+using namespace std;
 
-int main() {
-
+int main()
+try {
 	
-	keep_window_open("q");
 	return 0;
+}
+catch (exception& e) {
+	cerr << "error: " << e.what() << '\n';
+	return 1;
+}
+catch (...) {
+	cerr << "Unknown exception!\n";
+	return 2;
 }
