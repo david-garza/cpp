@@ -30,3 +30,34 @@ void output_file(vector<Reading>& temps)
 
 	print_temps(ost, temps);
 }
+
+void read_file(vector<Reading>& vr)
+{
+	cout << "Input file name: ";
+	string ifname;
+	cin >> ifname;
+
+	ifstream ist{ ifname };
+
+	if (!ist) error("can't open file");
+
+	// Read data and write to rdgs reading vector
+	Reading tmp;
+	while (true) {
+		ist >> tmp;
+
+		if (!ist) {
+			if (ist.bad()) error("disk read error");
+			
+			if (ist.fail()) {
+				if (ist.eof()) break;
+			}
+			else error("Unexpected format");
+				
+		}
+		else
+			vr.push_back(tmp);
+	}
+}
+
+

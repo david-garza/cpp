@@ -1,3 +1,4 @@
+#pragma once
 /*
 David Carlos Garza
 
@@ -12,21 +13,21 @@ Data format "h temp" where h is between 0 and 23, temp is in F
 0 73.5
 1 65.3
 
+This file holds the declarations for the data and data structures
+
 */
 
 #include "../../dcg.h"
-#include "data.h"
-#include "io_functions.h"
 
-void output_file(vector<Reading>& temps)
+struct Reading
 {
-	cout << "Output file name: ";
-	string ofname;
-	cin >> ofname;
+	int hour;
+	double temperature;
+};
 
-	ofstream ost{ ofname };
+ostream& operator<<(ostream& os, Reading& r);
+istream& operator>>(istream& is, Reading& r);
 
-	if (!ost) error("can't open file");
+void fill_temps(vector<Reading>& vr);
 
-	print_temps(ost, temps);
-}
+void print_temps(ostream& os, vector<Reading>& vr);
