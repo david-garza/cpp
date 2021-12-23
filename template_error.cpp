@@ -1,5 +1,5 @@
 /* Base template with exception catching */
-#include "../../std_lib_facilities.h"
+#include "../../dcg.h"
 
 int main()
 try {
