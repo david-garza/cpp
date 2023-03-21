@@ -10,15 +10,24 @@ Define a Roman_int class for holding Roman numerals (as ints) with a
 int value, so that if r is a Roman_int, we can write cout << "Roman"
 << r << " equals " << r.as_int() << '\n\;.
 
+Updated 3/20/2023
+
 */
 #include "../../dcg.h"
 
-
 int main()
 try {
-	string test1{"M"};
-	string test2{"MM"};
-	string test3{"C"};
+	string input;
+
+	cin >> input;
+
+	while (true)
+	{
+		if (input == "q")
+			break;
+
+		
+	}
 	
 	return 0;
 }
