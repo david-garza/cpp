@@ -11,7 +11,7 @@ namespace Rome {
 
 	// Functions to read and evaluate the roman numerals
 	int i_sum();
-	int v_sum(char rn);
+	int v_sum();
 	int x_sum(char rn);
 
 } // End of Rome namespace

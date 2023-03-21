@@ -20,18 +20,28 @@ int main()
 try {
 	char ch{ };
 
-	while (true)
+	while (ch!='q')
 	{
 		cout << "Please input a value: ";
 		
 		cin >> ch;
 
-		if (ch == 'q')
+		switch (ch)
+		{
+		case 'q':
 			break;
-
-		cin.putback(ch);
-		cout << "Value Entered " << Rome::i_sum() << '\n';
-		
+		case 'I':
+			cin.putback(ch);
+			cout << "Value: " << Rome::i_sum() << endl;
+			break;
+		case 'V':
+			cin.putback(ch);
+			cout << "Value: " << Rome::v_sum() << endl;
+			break;
+		default:
+			cout << "Unknown Value" << endl;
+			break;
+		}	
 		
 	}
 	
