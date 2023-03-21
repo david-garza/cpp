@@ -30,7 +30,7 @@ namespace Roman {
 	// Helpful variables
 	constexpr int int_upper{ 4000 };
 	constexpr int int_lower{ 0 };
-	// Vector table of roman charactors
+	// Vector table of roman characters
 	vector<char> roman_num_tbl{
 		'I','V','X','L','C','D','M'
 	};

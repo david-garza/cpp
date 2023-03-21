@@ -22,7 +22,7 @@ namespace Roman {
 		// Constructors
 		Roman_int();			// Defaults to 1! Since there is no 0 Roman numeral
 		Roman_int(string rn);	// Constructor to read a strings like 'MM'
-		Roman_int(int an);		// Constructor to reac intger values
+		Roman_int(int an);		// Constructor to read intger values
 
 		// Nonmodifying function
 		int as_int() const { return value; } 
