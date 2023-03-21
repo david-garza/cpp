@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="1006.cpp" />
+    <ClCompile Include="roman.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="roman.h" />

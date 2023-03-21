@@ -18,6 +18,9 @@
     <ClCompile Include="1006.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="roman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="roman.h">

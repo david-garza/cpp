@@ -14,21 +14,29 @@ Updated 3/20/2023
 
 */
 #include "../../dcg.h"
+#include "roman.h"
 
 int main()
 try {
-	string input;
-
-	cin >> input;
+	char ch{ };
 
 	while (true)
 	{
-		if (input == "q")
+		cout << "Please input a value: ";
+		
+		cin >> ch;
+
+		if (ch == 'q')
 			break;
 
+		cin.putback(ch);
+		cout << "Value Entered " << Rome::i_sum() << '\n';
+		
 		
 	}
 	
+	cout << "Program exited";
+
 	return 0;
 }
 catch (exception& e) {
