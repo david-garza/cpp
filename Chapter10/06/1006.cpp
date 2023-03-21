@@ -12,16 +12,14 @@ int value, so that if r is a Roman_int, we can write cout << "Roman"
 
 */
 #include "../../dcg.h"
-#include "Roman.h"
+
 
 int main()
 try {
 	string test1{"M"};
 	string test2{"MM"};
 	string test3{"C"};
-	cout << test1 << ' ' << Roman::rn_to_int(test1) << '\n';
-	cout << test2 << ' ' << Roman::rn_to_int(test2) << '\n';
-	cout << test3 << ' ' << Roman::rn_to_int(test3) << '\n';
+	
 	return 0;
 }
 catch (exception& e) {
