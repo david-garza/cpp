@@ -30,13 +30,13 @@ try {
 		{
 		case 'q':
 			break;
-		case 'I':
+		case 'I': case 'V':
 			cin.putback(ch);
-			cout << "Value: " << Rome::i_sum() << endl;
+			cout << "Value: " << Rome::ones_sum() << endl;
 			break;
-		case 'V':
+		case 'X': case 'L':
 			cin.putback(ch);
-			cout << "Value: " << Rome::v_sum() << endl;
+			cout << "Value: " << Rome::tens_sum() << endl;
 			break;
 		default:
 			cout << "Unknown Value" << endl;

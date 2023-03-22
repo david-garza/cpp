@@ -6,12 +6,12 @@ Date: 3/20/2023
 #include "../../dcg.h"
 
 namespace Rome {
-	
-	// Variables to keep track of the totals
 
-	// Functions to read and evaluate the roman numerals
-	int i_sum();
-	int v_sum();
-	int x_sum(char rn);
+	// Functions to handel numerals I through IX
+	int ones_sum();
+	string ones_read();
+
+	// Function to sum X through XC
+	int tens_sum();
 
 } // End of Rome namespace
