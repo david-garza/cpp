@@ -8,8 +8,7 @@ namespace Rome {
     {
         string rn;
 
-        // Replace with the read function
-        cin >> rn;
+        rn = ones_read(); // Checks and verifies that the inputs meet the ones criteria
 
         if (rn == "I")
             return 1;
@@ -36,21 +35,45 @@ namespace Rome {
     // reads the I through IX values and checks for errors
     string ones_read()
     {
-        char ch{};
-        string s;
+        
+            char ch{};
+            string s;
+            int i_count{ 0 };
+            int v_count{ 0 };
+            int x_count{ 0 };
 
-        // Read the character and check if it is one of I,V,X
-        while (cin >> ch) {
-            switch (ch)
-            {
-            case 'I': case 'V': case 'X':
-                s += ch;
-            default:
-                error("Unexpected ones value"); // Add proper try and catch blocks
-                break;
+            // Read the character and check if it is one of I,V,X
+            while (ch!=';') {
+                cin >> ch;
+
+                switch (ch)
+                {
+                case ';':
+                    break;
+                case 'I': 
+                    // Add if i_count = 3 throw error!
+                    // Add if s="IV" or "IX" throw error!
+                    s += ch;
+                    i_count++;
+                    break;
+                case 'V': 
+                    // Add if v_count = 1 throw error!
+                    s += ch;
+                    v_count++;
+                    break;
+                case 'X':
+                    // Add if x_count = 1 throw error!
+                    // Add if s!="I" throw error.
+                    s += ch;
+                    x_count++;
+                    break;
+                default:
+                    cout << ("Unknown Character\n"); // Add error handling
+                    s = "";
+                    break;
+                }
             }
-        }
-        return string(s);
+            return string(s);
     }
 
     // Function that sums the tens digits
