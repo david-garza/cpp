@@ -3,7 +3,7 @@
 
 namespace Rome {
 
-    // Function that returns the value of the ones digit
+    // Function that returns the value of the ones group
     int ones_sum()
     {
         string rn;
@@ -35,41 +35,48 @@ namespace Rome {
     // reads the I through IX values and checks for errors
     string ones_read()
     {
-        
             char ch{};
             string s;
-            int i_count{ 0 };
-            int v_count{ 0 };
-            int x_count{ 0 };
 
             // Read the character and check if it is one of I,V,X
-            while (ch!=';') {
-                cin >> ch;
-
+            while (cin.get(ch)) {
                 switch (ch)
                 {
-                case ';':
+                case ' ': 
                     break;
                 case 'I': 
-                    // Add if i_count = 3 throw error!
-                    // Add if s="IV" or "IX" throw error!
-                    s += ch;
-                    i_count++;
-                    break;
+                    // Test if read is complete
+                    if (s == "III" || s == "IV" || s == "IX" || s=="VIII") {
+                        cin.putback(ch);
+                        return(s);
+                    }
+                    // Else add an I to whatever is there.
+                    else {
+                        s += ch;
+                        break;
+                    }
                 case 'V': 
-                    // Add if v_count = 1 throw error!
-                    s += ch;
-                    v_count++;
-                    break;
+                    // Test if read is complete
+                    if (s == "V" || s == "VI" || s == "VII" || s == "VIII" || s == "IV" || s == "IX") {
+                        cin.putback(ch);
+                        return(s);
+                    }
+                    else {
+                        s += ch;
+                        break;
+                    }                   
                 case 'X':
-                    // Add if x_count = 1 throw error!
-                    // Add if s!="I" throw error.
-                    s += ch;
-                    x_count++;
-                    break;
+                    if (s == "V" || s == "VI" || s == "VII" || s == "VIII" || s == "II" || s == "III" || s == "IX") {
+                        cin.putback(ch);
+                        return(s);
+                    }
+                    else {
+                        s += ch;
+                        break;
+                    }                 
                 default:
-                    cout << ("Unknown Character\n"); // Add error handling
-                    s = "";
+                    cin.putback(ch);
+                    return(s);
                     break;
                 }
             }
